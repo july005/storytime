@@ -1,0 +1,21 @@
+= simple_form_for(@story, html: {class: 'form-nav'}) do |f|
+	= f.collection_radio_buttons :gender, [[true, 'Boy'] ,[false, 'Girl']], :first, :last
+
+	
+	#Note I've hidden the name line. Want all lines to be hidden but appear when each question is asked, like in http://jsfiddle.net/rym2g/
+
+
+	= f.input :name, label: "My character’s name is...", input_html: { class: "hidden" }, label_html: { class: "hidden" }
+	= f.input :color, label: "#{@story.name}'s favorite color is...", input_html: { class: "form-control" }
+	= f.input :activity, label: "#{@story.name}’s favorite thing to do is...", input_html: { class: "form-control" }
+	= f.input :success, label: "#{@story.name} likes to #{@story.activity} because...", input_html: { class: "form-control" }
+	= f.input :challenge, label: "It was hard for #{@story.name} to #{@story.activity} once because...", input_html: { class: "form-control" }
+	= f.input :friend_name, label: "The name of #{@story.name}'s friend is...", input_html: { class: "form-control" }
+	= f.input :friend_role, label: "#{@story.friend_name} did something to make it worse! He/she...", input_html: { class: "form-control" }
+	= f.input :challenge_mood, label: "And then #{@story.name} felt...", input_html: { class: "form-control" }
+	= f.input :action, label: "To overcome it, #{@story.name}...", input_html: { class: "form-control" }
+	= f.input :result, label: "Because my character #{@story.action}, this happened...", input_html: { class: "form-control" }
+	= f.input :result_mood, label: "And when #{@story.result}, #{@story.name} felt...", input_html: { class: "form-control" }
+	= f.input :eversince, label: "But in the end, #{@story.name} learned that...", input_html: { class: "form-control" }
+	= f.input :title, label: "Look at that—you made a story! Let's call it...", input_html: { class: "form-control" }
+	= f.button :submit

@@ -1,0 +1,20 @@
+#story
+	%h1= @story.title
+
+	%p Hello #{@story.gender} 
+	%p #{@story.name} 
+	%p #{@story.color} 
+	%p #{@story.activity} 
+	%p #{@story.success} 
+	%p #{@story.challenge} 
+	%p #{@story.friend_name} 
+	%p #{@story.friend_role} 
+	%p #{@story.challenge_mood} 
+	%p #{@story.action} 
+	%p #{@story.result} 
+	%p #{@story.result_mood} 
+	%p #{@story.eversince}
+
+=link_to "Back", root_path
+|
+=link_to "Edit", edit_story_path(@story)
