@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gender: false
+  name: MyString
+  color: MyString
+  activity: MyString
+  success: MyText
+  challenge: MyText
+  friend_name: MyString
+  friend_role: MyText
+  challenge_mood: MyString
+  action: MyText
+  result: MyText
+  result_mood: MyString
+  eversince: MyText
+  title: MyString
+
+two:
+  gender: false
+  name: MyString
+  color: MyString
+  activity: MyString
+  success: MyText
+  challenge: MyText
+  friend_name: MyString
+  friend_role: MyText
+  challenge_mood: MyString
+  action: MyText
+  result: MyText
+  result_mood: MyString
+  eversince: MyText
+  title: MyString
