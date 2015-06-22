@@ -15,9 +15,3 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-
-$('#story.gender').on('change', function(){
-    var option = $(this).find(':selected');
-    $('[data-show-for]').hide(); //And maybe reset?
-    $('[data-show-for='+ option.text() +']').show()
-});
