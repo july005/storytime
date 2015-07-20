@@ -1,5 +1,7 @@
-%h1 Edit Story
+%div.jumbotron
+	%h1 Edit Story
 
-= render 'form'
+	= render 'form'
 
-= link_to "Cancel", root_path
+	= link_to "Cancel", story_path
+	= link_to "Delete", story_path, method: :delete, class: "btn btn-default"

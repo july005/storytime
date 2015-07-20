@@ -4,6 +4,9 @@ class StoriesController < ApplicationController
 		@stories = Story.all.order("created_at DESC")
 	end
 
+	def choosegender
+	end
+
 	def show
 	end
 
@@ -19,7 +22,7 @@ class StoriesController < ApplicationController
 			render 'new'
 		end
 	end
-
+	
 	def edit 
 	end
 
@@ -32,6 +35,8 @@ class StoriesController < ApplicationController
 	end
 
 	def destroy
+		@story.destroy
+		redirect_to root_path
 	end
 
 	private

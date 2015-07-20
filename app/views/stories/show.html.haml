@@ -1,20 +1,20 @@
-#story
-	%h1= @story.title
+%div.jumbotron
+	#story_show
+		%h1= @story.title
 
-	%p Hello #{@story.gender} 
-	%p #{@story.name} 
-	%p #{@story.color} 
-	%p #{@story.activity} 
-	%p #{@story.success} 
-	%p #{@story.challenge} 
-	%p #{@story.friend_name} 
-	%p #{@story.friend_role} 
-	%p #{@story.challenge_mood} 
-	%p #{@story.action} 
-	%p #{@story.result} 
-	%p #{@story.result_mood} 
-	%p #{@story.eversince}
+		%p Hello #{@story.gender} 
+		%p #{@story.name}'s most favorite thing to do is #{@story.activity}. He/she loves to admire anything #{@story.color} in sight--[[list #{@story.color} things here]], because #{@story.success} until one day, #{@story.challenge}. 
 
-=link_to "Back", root_path
-|
-=link_to "Edit", edit_story_path(@story)
+		%p This was made worse by his/her friend {@story.friend_name}, who #{@story.friend_role}. When {@story.friend_name} did that, #{@story.name} felt really #{@story.challenge_mood}. 
+
+		%p But #{@story.name} thought of something while sitting in his/her #{@story.color} bed. She/He would #{@story.action}.
+
+		%p Well, she did, and because of that, #{@story.result}. #{@story.name} felt #{@story.result_mood}!
+
+		%p And ever since that day, #{@story.name} has known in his/her heart that #{@story.eversince}.
+
+	=link_to "Back", root_path, class: "btn btn-default"
+	|
+	=link_to "Edit", edit_story_path(@story), class: "btn btn-primary"
+	|
+	= link_to "Delete", story_path, method: :delete, class: "btn btn-danger"

@@ -1,5 +1,15 @@
-%h1 New Story
+!!! 5
+%head
+	%title= "Oh My Stories - New Story"
+	%meta{ :content => "", :name => "Build a story with us!" }
+	%meta{ :content => "", :name => "Oh My Stories" }
+	%meta{ :content => "3 days", :name => "revisit-after" }
+	%link{ :href => "/feed", :rel => "alternate", :title => "Atom", :type => "application/atom+xml" }
+	%script{:src => "stories.js", :type => "text/javascript"}
+%body
+	%div.jumbotron
+		%h1 New Story
 
-= render 'form'
+		= render 'form'
 
-= link_to "Start Over", root_path
+		= link_to "Start Over", root_path

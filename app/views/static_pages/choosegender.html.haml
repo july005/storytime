@@ -1,0 +1,15 @@
+%html{:lang => "en"}
+	%head
+	%body
+		.jumbotron.center
+			%h1
+				%strong My Character
+			%p
+				Is it a 
+				= link_to "Boy", new_story_path, class: "btn btn-primary"
+				\&nbsp; ...         or a    &nbsp;
+				= link_to "Girl", new_story_path, class: "btn btn-primary"
+				?
+			%p
+				= link_to(image_tag("boy.png"), new_story_path)
+				= link_to(image_tag("girl.png"), new_story_path)

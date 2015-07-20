@@ -16,7 +16,7 @@
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 
 body {
-  background: asset_url('background4.jpg');
+  background-image:url('../images/background4.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -30,6 +30,75 @@ max-width:100%;
 .hidden {
     display: none;
 }
+
+.question01 {
+    text-align: center;
+}
+.buttonq1 {
+    display:block;
+    width:180px;
+    height:24px;
+    text-align:center;
+    padding:4px;
+}
+
+.preview {
+    
+}
+/*.question02 {
+    display: none; /* onLoad your div will be hidden */
+/*    text-align: center;
+}*/
+.question03 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question04 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question05 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question06 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question07 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question08 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question09 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question10 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question11 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question12 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.question13 {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+.submitbutton {
+    display: none; /* onLoad your div will be hidden */
+    text-align: center;
+}
+
+
 .navbar, .navbar-inner { height: 70px !important }
 
 $body-bg:                         #bee9e4;
@@ -70,12 +139,14 @@ $btn-default-color:               #ffb347;
   padding-left:30px;
   padding-right:30px;
 }
-
+body {padding:30px;}
 
 body { padding-top: 140px; }
 
 $font-size-base:                  34px;
 $navbar-height:                   60px;
+
+.div 
 
 .glyphicon {
    font-family:'Glyphicons Halflings' !important;
@@ -88,6 +159,10 @@ $navbar-height:                   60px;
 }
 @import "bootstrap-sprockets";
 @import 'bootstrap';
+
+
+
+
 
 .center {
      text-align: center;

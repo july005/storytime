@@ -1,21 +1,84 @@
-= simple_form_for(@story, html: {class: 'form-nav'}) do |f|
+!!!
+%html
+	%head
 
-	#Note I want each of below lines (except boy/girl question) to be hidden but then appear when previous question is answered, like in http://jsfiddle.net/rym2g/. Should I use conditional logic JS?
+		%script{:src => "stories.js", :type => "text/javascript"}
 
-	= f.collection_radio_buttons :gender, [[true, 'Boy'] ,[false, 'Girl']], :first, :last
-	= f.input :name, label: "My character’s name is...", input_html: { class: "form-control" }
-	= f.input :color, label: "#{@story.name}'s favorite color is...", input_html: { class: "form-control" }
-	= f.input :activity, label: "#{@story.name}’s favorite thing to do is...", input_html: { class: "form-control" }
-	= f.input :success, label: "#{@story.name} likes to #{@story.activity} because...", input_html: { class: "form-control" }
-	= f.input :challenge, label: "It was hard for #{@story.name} to #{@story.activity} once because...", input_html: { class: "form-control" }
-	= f.input :friend_name, label: "The name of #{@story.name}'s friend is...", input_html: { class: "form-control" }
-	= f.input :friend_role, label: "#{@story.friend_name} did something to make it worse! He/she...", input_html: { class: "form-control" }
-	= f.input :challenge_mood, label: "And then #{@story.name} felt...", input_html: { class: "form-control" }
-	= f.input :action, label: "To overcome it, #{@story.name}...", input_html: { class: "form-control" }
-	= f.input :result, label: "Because #{@story.name} #{@story.action}, something crazy happened...", input_html: { class: "form-control" }
-	= f.input :result_mood, label: "And when #{@story.result}, #{@story.name} felt...", input_html: { class: "form-control" }
-	= f.input :eversince, label: "But in the end, #{@story.name} learned that...", input_html: { class: "form-control" }
-	= f.input :title, label: "Look at that—you made a story! What should we call it?", input_html: { class: "form-control" }
-	= f.button :submit
+	%body
+		= simple_form_for(@story, id: "story_form", html: {class: 'form-nav'}) do |f|
+
+			#container-fluid
+				.question01
+					= f.input :name, label: "Question 1: My character’s name is...", input_html: { class: "form-control" }
+					%button#preview.btn.btn-danger{:type => "button"} Using Preview button class in stories.js and css file
+					%a.button#button1.btn.btn-primary.btn-md{:href => "#", :role => "button"}problem is, this form is not picking up JS b/c q2 is not hidden on load
+					%br
+					%button{:onclick => "alert('Hello world!')", :type => "button"} Alert!
+					%a.btn.btn-info{:href => "#", :role => "button"} Link Button
+					%input.btn.btn-info{:type => "submit", :value => "Submit Button"}/
+
+			#container-fluid
+				.question02
+					= f.input :color, label: "Question 2: #{@story.name}'s favorite color is...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-warning', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question03
+					= f.input :activity, label: "Question 3: #{@story.name}’s favorite thing to do is...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-info', :type => 'button'} Click for JS
+			
+			#container-fluid
+				.question04
+					= f.input :success, label: "Question 4: #{@story.name} likes to #{@story.activity} because...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-storypage', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question05
+					= f.input :challenge, label: "Question 5: It was hard for #{@story.name} to #{@story.activity} once because...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-success', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question06
+					= f.input :friend_name, label: "Question 6: The name of #{@story.name}'s friend is...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-danger', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question07
+					= f.input :friend_role, label: "Question 7: #{@story.friend_name} did something to make it worse! He/she...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-primary', :type => 'button'} Click for JS
+			
+			#container-fluid
+				.question08
+					= f.input :challenge_mood, label: "Question 8: And then #{@story.name} felt...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-storypage', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question09
+					= f.input :action, label: "Question 9: To overcome it, #{@story.name}...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-storypage', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question10
+					= f.input :result, label: "Question 10: Because #{@story.name} #{@story.action}, something crazy happened...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-storypage', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question11
+					= f.input :result_mood, label: "Question 11: And when #{@story.result}, #{@story.name} felt...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-storypage', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question12
+					= f.input :eversince, label: "Question 12: But in the end, #{@story.name} learned that...", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-storypage', :type => 'button'} Click for JS
+
+			#container-fluid
+				.question13
+					= f.input :title, label: "Question 13: Look at that—you made a story! What should we call it?", input_html: { class: "form-control" }
+					%button{:class => 'btn btn-storypage', :type => 'button'} Click for JS
+
+			#container-fluid
+				.submitbutton
+					= f.button :submit
 
 
