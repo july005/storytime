@@ -6,10 +6,13 @@
 	%meta{ :content => "3 days", :name => "revisit-after" }
 	%link{ :href => "/feed", :rel => "alternate", :title => "Atom", :type => "application/atom+xml" }
 	%script{:src => "stories.js", :type => "text/javascript"}
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
 %body
 	%div.jumbotron
-		%h1 New Story
 
 		= render 'form'
 
-		= link_to "Start Over", root_path
+		.center
+			= link_to "Start Over", root_path
