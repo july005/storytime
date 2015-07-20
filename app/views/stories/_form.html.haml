@@ -10,56 +10,68 @@
 		= simple_form_for(@story, id: "story_form", html: {class: 'form-nav'}) do |f|
 
 			#question01
-				= f.input :name, label: "Question 1: My character's name is...", input_html: { class: "form-control" }
-				%button#preview1.btn.btn-warning{:type => "button"} Click to reveal Question 2
+				.center
+					= f.input :name, label: "My character's name is...", input_html: { class: "form-control" }
+					%button#preview1.btn.btn-warning{:type => "button"} Next Question
 
 			#question02
-				= f.input :color, label: "Question 2: #{@story.name}'s favorite color is...", input_html: { class: "form-control" }
-				%button#preview2.btn.btn-primary{:type => "button"} Click to reveal Question 3
+				.center
+					= f.input :color, label: "#{@story.name}'s favorite color is...", input_html: { class: "form-control" }
+					%button#preview2.btn.btn-primary{:type => "button"} Next Question
 
 			#question03
-				= f.input :activity, label: "Question 3: #{@story.name}’s favorite thing to do is...", input_html: { class: "form-control" }
-				%button#preview3.btn.btn-info{:type => "button"} Click to reveal Question 4
+				.center
+					= f.input :activity, label: "#{@story.name}’s favorite thing to do is...", input_html: { class: "form-control" }
+					%button#preview3.btn.btn-info{:type => "button"} Next Question
 			
 			#question04
-				= f.input :success, label: "Question 4: #{@story.name} likes to #{@story.activity} because...", input_html: { class: "form-control" }
-				%button#preview4.btn.btn-success{:type => "button"} Click to reveal Question 5
+				.center
+					= f.input :success, label: "#{@story.name} likes to #{@story.activity} because...", input_html: { class: "form-control" }
+					%button#preview4.btn.btn-success{:type => "button"} Next Question
 
 			#question05
-				= f.input :challenge, label: "Question 5: It was hard for #{@story.name} to #{@story.activity} once because...", input_html: { class: "form-control" }
-				%button#preview5.btn.btn-danger{:type => "button"} Click to reveal Question 6
+				.center
+					= f.input :challenge, label: "It was hard for #{@story.name} to #{@story.activity} once because...", input_html: { class: "form-control" }
+					%button#preview5.btn.btn-danger{:type => "button"} Next Question
 
 			#question06
-				= f.input :friend_name, label: "Question 6: The name of #{@story.name}'s friend is...", input_html: { class: "form-control" }
-				%button#preview6.btn.btn-primary{:type => "button"} Click to reveal Question 7
+				.center
+					= f.input :friend_name, label: "The name of #{@story.name}'s friend is...", input_html: { class: "form-control" }
+					%button#preview6.btn.btn-primary{:type => "button"} Next Question
 
 			#question07
-				= f.input :friend_role, label: "Question 7: #{@story.friend_name} did something to make it worse! He/she...", input_html: { class: "form-control" }
-				%button#preview7.btn.btn-primary{:type => "button"} Click to reveal Question 8
+				.center
+					= f.input :friend_role, label: "#{@story.friend_name} did something to make it worse! He/she...", input_html: { class: "form-control" }
+					%button#preview7.btn.btn-primary{:type => "button"} Next Question
 			
 			#question08
-				= f.input :challenge_mood, label: "Question 8: And then #{@story.name} felt...", input_html: { class: "form-control" }
-				%button#preview8.btn.btn-primary{:type => "button"} Click to reveal Question 9
+				.center
+					= f.input :challenge_mood, label: "And then #{@story.name} felt...", input_html: { class: "form-control" }
+					%button#preview8.btn.btn-primary{:type => "button"} Next Question
 
 			#question09
-				= f.input :action, label: "Question 9: To overcome it, #{@story.name}...", input_html: { class: "form-control" }
-				%button#preview9.btn.btn-primary{:type => "button"} Click to reveal Question 10
+				.center
+					= f.input :action, label: "To overcome it, #{@story.name}...", input_html: { class: "form-control" }
+					%button#preview9.btn.btn-primary{:type => "button"} Next Question
 
 			#question10
-				= f.input :result, label: "Question 10: Because #{@story.name} #{@story.action}, something crazy happened...", input_html: { class: "form-control" }
-				%button#preview10.btn.btn-primary{:type => "button"} Click to reveal Question 11
+				.center
+					= f.input :result, label: "Because #{@story.name} #{@story.action}, something crazy happened...", input_html: { class: "form-control" }
+					%button#preview10.btn.btn-primary{:type => "button"} Next Question
 
 			#question11
-				= f.input :result_mood, label: "Question 11: And when #{@story.result}, #{@story.name} felt...", input_html: { class: "form-control" }
-				%button#preview11.btn.btn-primary{:type => "button"} Click to reveal Question 12
+				.center
+					= f.input :result_mood, label: "And when #{@story.result}, #{@story.name} felt...", input_html: { class: "form-control" }
+					%button#preview11.btn.btn-primary{:type => "button"} Next Question
 
 			#question12
-				= f.input :eversince, label: "Question 12: But in the end, #{@story.name} learned that...", input_html: { class: "form-control" }
-				%button#preview12.btn.btn-primary{:type => "button"} Click to reveal Question 13
+				.center
+					= f.input :eversince, label: "But in the end, #{@story.name} learned that...", input_html: { class: "form-control" }
+					%button#preview12.btn.btn-primary{:type => "button"} Next Question
 
 			#question13
-				= f.input :title, label: "Question 13: Look at that—you made a story! What should we call it?", input_html: { class: "form-control" }
-				%button#preview13.btn.btn-primary{:type => "button"} Click to reveal Question 14
-				= f.button :submit
+				.center
+					= f.input :title, label: "Look at that—you made a story! What should we call it?", input_html: { class: "form-control" }
+					= f.button :submit
 
 

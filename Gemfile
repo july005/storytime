@@ -14,3 +14,11 @@ gem 'spring',        group: :development
 gem 'haml', '~> 4.0.6'
 gem 'simple_form', '~> 3.1.0'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'devise'
+
+group :development, :test do      
+gem 'sqlite3' end  
+
+group :production do      
+gem 'pg', '~> 0.18.2'
+gem 'rails_12factor' end
