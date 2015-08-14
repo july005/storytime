@@ -6,7 +6,23 @@
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 		= csrf_meta_tags
 
+
+		%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"}
+		:javascript
+			$(document).ready(function(){
+					$("button").click(function(){
+							$("p:first").replaceWith("#{@story.name}");
+					});
+			});
+
+
+
 	%body
+
+		%p This is the 1st placeholder.
+		%p When this becomes the first para, it will be replaced again
+		%button Replace the first %p haml div with text defined as the .replaceWith
+
 		= simple_form_for(@story, id: "story_form", html: {class: 'form-nav'}) do |f|
 
 			#question01
@@ -21,7 +37,7 @@
 
 			#question03
 				.center
-					= f.input :activity, label: "#{@story.name}’s favorite thing to do is...", input_html: { class: "form-control" }
+					= f.input :activity, label: "#{@story.name}'s favorite thing to do is...", input_html: { class: "form-control" }
 					%button#preview3.btn.btn-info{:type => "button"} Next Question
 			
 			#question04
