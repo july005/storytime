@@ -15,12 +15,10 @@
 					});
 			});
 
-
-
 	%body
 
 		%p This is the 1st placeholder.
-		%p When this becomes the first para, it will be replaced again
+		%p When this becomes the 1st %p, it will be replaced again
 		%button Replace the first %p haml div with text defined as the .replaceWith
 
 		= simple_form_for(@story, id: "story_form", html: {class: 'form-nav'}) do |f|
