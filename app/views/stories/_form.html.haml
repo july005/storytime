@@ -6,22 +6,28 @@
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 		= csrf_meta_tags
 
-
-		%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"}
 		:javascript
-			$(document).ready(function(){
-					$("button").click(function(){
-							$("p:first").replaceWith("#{@story.name}");
-					});
+			$(function(){
+				$("#preview1").on("click", function(){
+					$("#question02").append("\#{@story.name}");
+				});
 			});
 
+			$(function(){
+				$("#preview1").on("click", function(){
+					$("#question02").patch("\#{@story.name}");
+				});
+			});
+
+			$(function(){
+				$("#preview2").on("click", function(){
+					$("#question03").append("\#{@story.color}");
+				});
+			});
+	
 	%body
 
-		%p This is the 1st placeholder.
-		%p When this becomes the 1st %p, it will be replaced again
-		%button Replace the first %p haml div with text defined as the .replaceWith
-
-		= simple_form_for(@story, id: "story_form", html: {class: 'form-nav'}) do |f|
+		= simple_form_for(@story, id: "story_form", html: {class: 'form-nav'}, :remote => true) do |f|
 
 			#question01
 				.center
@@ -30,62 +36,61 @@
 
 			#question02
 				.center
-					= f.input :color, label: "#{@story.name}'s favorite color is...", input_html: { class: "form-control" }
+					= f.input :color, label: "__#{@story.name}__'s favorite color is...", input_html: { class: "form-control" }
 					%button#preview2.btn.btn-primary{:type => "button"} Next Question
 
 			#question03
 				.center
-					= f.input :activity, label: "#{@story.name}'s favorite thing to do is...", input_html: { class: "form-control" }
+					= f.input :activity, label: "__#{@story.name}__'s favorite thing to do is...", input_html: { class: "form-control" }
 					%button#preview3.btn.btn-info{:type => "button"} Next Question
 			
 			#question04
 				.center
-					= f.input :success, label: "#{@story.name} likes to #{@story.activity} because...", input_html: { class: "form-control" }
+					= f.input :success, label: "__#{@story.name}__ likes to __#{@story.activity}__ because...", input_html: { class: "form-control" }
 					%button#preview4.btn.btn-success{:type => "button"} Next Question
 
 			#question05
 				.center
-					= f.input :challenge, label: "It was hard for #{@story.name} to #{@story.activity} once because...", input_html: { class: "form-control" }
+					= f.input :challenge, label: "It was hard for __#{@story.name}__ to __#{@story.activity}__ once because...", input_html: { class: "form-control" }
 					%button#preview5.btn.btn-danger{:type => "button"} Next Question
 
 			#question06
 				.center
-					= f.input :friend_name, label: "The name of #{@story.name}'s friend is...", input_html: { class: "form-control" }
+					= f.input :friend_name, label: "The name of __#{@story.name}__'s friend is...", input_html: { class: "form-control" }
 					%button#preview6.btn.btn-primary{:type => "button"} Next Question
 
 			#question07
 				.center
-					= f.input :friend_role, label: "#{@story.friend_name} did something to make it worse! He/she...", input_html: { class: "form-control" }
+					= f.input :friend_role, label: "__#{@story.friend_name}__ did something to make it worse! He/she...", input_html: { class: "form-control" }
 					%button#preview7.btn.btn-primary{:type => "button"} Next Question
 			
 			#question08
 				.center
-					= f.input :challenge_mood, label: "And then #{@story.name} felt...", input_html: { class: "form-control" }
+					= f.input :challenge_mood, label: "And then __#{@story.name}__ felt...", input_html: { class: "form-control" }
 					%button#preview8.btn.btn-primary{:type => "button"} Next Question
 
 			#question09
 				.center
-					= f.input :action, label: "To overcome it, #{@story.name}...", input_html: { class: "form-control" }
+					= f.input :action, label: "To overcome it, __#{@story.name}__...", input_html: { class: "form-control" }
 					%button#preview9.btn.btn-primary{:type => "button"} Next Question
 
 			#question10
 				.center
-					= f.input :result, label: "Because #{@story.name} #{@story.action}, something crazy happened...", input_html: { class: "form-control" }
+					= f.input :result, label: "Because __#{@story.name}__ __#{@story.action}__, something crazy happened...", input_html: { class: "form-control" }
 					%button#preview10.btn.btn-primary{:type => "button"} Next Question
 
 			#question11
 				.center
-					= f.input :result_mood, label: "And when #{@story.result}, #{@story.name} felt...", input_html: { class: "form-control" }
+					= f.input :result_mood, label: "And when __#{@story.result}__, __#{@story.name}__ felt...", input_html: { class: "form-control" }
 					%button#preview11.btn.btn-primary{:type => "button"} Next Question
 
 			#question12
 				.center
-					= f.input :eversince, label: "But in the end, #{@story.name} learned that...", input_html: { class: "form-control" }
+					= f.input :eversince, label: "But in the end, __#{@story.name}__ learned that...", input_html: { class: "form-control" }
 					%button#preview12.btn.btn-primary{:type => "button"} Next Question
 
 			#question13
 				.center
 					= f.input :title, label: "Look at that—you made a story! What should we call it?", input_html: { class: "form-control" }
 					= f.button :submit
-
 

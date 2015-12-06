@@ -9,10 +9,11 @@
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= csrf_meta_tags
+	
 %body
 	%div.jumbotron
 
-		= render 'form'
+		= render 'form', :remote => true 
 
 		.center
 			= link_to "Start Over", root_path

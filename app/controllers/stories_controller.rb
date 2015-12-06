@@ -12,15 +12,29 @@ class StoriesController < ApplicationController
 
 	def new 
 		@story = Story.new
+		respond_to do |format|
+      format.html #new.html.erb
+      format.json { render json: @story}
+    end
 	end
 
 	def create 
 		@story = Story.new(story_params)
-		if @story.save
-			redirect_to @story
-		else
-			render 'new'
-		end
+		
+		respond_to do |format|
+			if @story.save
+				format.html { redirect_to @story, notice: "Save process completed!" }
+        format.js   { }
+        format.json { render :show, status: :created, location: @story }
+			else
+				format.html { 
+	        flash.now[:notice]="Save proccess couldn't be completed!" 
+	        render :new 
+	        }
+        format.json { render json: @story.errors, status: :unprocessable_entity}
+      end
+    end
+
 	end
 	
 	def edit 
